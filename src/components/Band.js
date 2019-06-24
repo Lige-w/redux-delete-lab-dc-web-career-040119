@@ -5,21 +5,17 @@ import {deleteBand} from '../actions/bandActions'
 class Band extends Component {
 
   render() {
-    const {band: {name}} = this.props
+    debugger
+    const {band: {id, name}, deleteBand} = this.props
     return(
       <li>
         {name}
+        <button onClick={() => deleteBand(id)}>DELETE</button>
       </li>
     );
   }
 };
 
-const mapDispatchToProps = dispatch => ({
-  deleteBand: (id) => ({
-    type: "DELETE_BAND",
-    id
-  })
-})
 
 
-export default connect()(Band);
+export default Band
